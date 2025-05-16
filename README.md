@@ -1,104 +1,112 @@
-## 📸 High-Resolution Image Scraper
 
-![Gradio Interface Screenshot](./docs/screenshot.png)
+# 🖼️ High-Resolution Google Image Scraper
 
-### 🚀 Project Overview
-
-The **High-Resolution Image Scraper** is a Python-based tool that uses the Google Images (via [SerpAPI](https://serpapi.com/)) to fetch images based on a user-defined search query. It filters out low-resolution images and only retains those that meet a minimum resolution threshold set by the user. The project includes a **Gradio-based GUI** with dark mode and ZIP download support.
+A user-friendly Gradio app to scrape **high-resolution** images from Google based on a search query using **SerpAPI**. Images are filtered by resolution and available for batch download as a ZIP.
 
 ---
 
-### 🧠 Features
+## 📸 Demo Screenshot
 
-* 🔍 Scrape images from **Google Images** using SerpAPI.
-* 📐 Filter by **minimum resolution** (width and height).
-* 🌗 **Dark Mode Toggle** UI theme.
-* 🎛️ Interactive UI built with **Gradio**.
-* 💾 Automatically downloads high-res images into a ZIP file.
-* 🖼️ Displays images in a scrollable, responsive gallery.
-* 🧑‍💻 Easy to customize and extend (add more filters, sources, etc).
+![image](https://github.com/user-attachments/assets/ed8d766f-de35-4a54-b1ea-24e85cee1166)
+
 
 ---
 
-### 📁 Project Structure
+## 🚀 Features
+
+- 🔍 Google Image scraping using SerpAPI
+- 🖼️ Filter by minimum resolution (width × height)
+- 💾 Download images in bulk as ZIP
+- 🌙 Dark mode toggle for UI
+
+---
+
+## 📁 Folder Structure
 
 ```
-Image-Scraper-HighRes/
+
+google-image-scraper/
+├── scraper/
+│   ├── image\_utils.py
+│   ├── serp\_scraper.py
+│   ├── zip\_utils.py
+│   └── **init**.py
+├── app.py
+├── config.py
+├── .env
 ├── README.md
-├── Project_Requirements_doc.md
-├── team_info.md
-├── src/
-│   └── app.py
-├── docs/
-│   ├── screenshot.png
-│   └── tech_stack.md
-├── demo/
-│   ├── demo_src/
-│   └── screenshots/
-```
+└── screenshots/ui\_screenshot.png
+
+````
 
 ---
 
-### 🛠️ Tech Stack
+## 🛠️ Setup Instructions
 
-* 🐍 Python
-* 🖼️ [Gradio](https://gradio.app/)
-* 🔎 [SerpAPI](https://serpapi.com/)
-* 📦 OpenCV, Pillow, requests, tqdm
-
----
-
-### 📥 Installation & Setup
-
-> ✅ **Requirements:** Python 3.7+, Gradio, requests, OpenCV, PIL, tqdm, serpapi
-
-1. **Clone the repository**
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/GitHub-Aditya14Raj/Image-Scraper-HighRes.git
-cd Image-Scraper-HighRes
+git clone https://github.com/your-username/google-image-scraper.git
+cd google-image-scraper
+````
+
+### 2. Create Virtual Environment (optional but recommended)
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-2. **Install dependencies**
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-> *(Manually install if `requirements.txt` is not created yet)*
+Or manually install:
 
 ```bash
-pip install gradio opencv-python Pillow requests tqdm serpapi
+pip install gradio google-search-results opencv-python pillow tqdm python-dotenv
 ```
 
-3. **Set your SerpAPI Key**
+### 4. Set up `.env` File
 
-Inside `src/app.py`, replace:
+Create a `.env` file in the root directory and add your SerpAPI key:
 
-```python
-SERPAPI_KEY = "your_actual_serpapi_key"
+```env
+SERPAPI_KEY="your_api_key_here"
 ```
 
----
-
-### 🧪 How to Run
+### 5. Run the App
 
 ```bash
-cd src
 python app.py
 ```
 
-> This will open a Gradio interface in your browser.
+It will launch the Gradio interface in your browser.
 
 ---
 
-### 📸 Gradio Interface (Screenshot)
+## 📦 Downloaded Images
 
-![image](https://github.com/user-attachments/assets/f8b66cea-b449-4438-bc12-573c367e6d57)
+Filtered images are saved to the `downloaded_images/` folder and compressed as `high_res_images.zip` for download.
 
+---
 
+## 📌 Notes
 
-### 📄 License
+* This tool uses SerpAPI which requires a valid API key.
+* Make sure your free/paid SerpAPI quota is sufficient for scraping.
 
-This project is open-source and available under the [MIT License](LICENSE).
+---
+
+## 🧑‍💻 Author
+
+Developed by Aditya Raj
+
+---
+
+## 🛡️ License
+
+This project is licensed under the MIT License.
 
