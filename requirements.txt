@@ -1,0 +1,6 @@
+gradio
+opencv-python
+pillow
+tqdm
+python-dotenv
+google-search-results
